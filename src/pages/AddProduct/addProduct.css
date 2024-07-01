@@ -1,0 +1,40 @@
+.model {
+  width: 98vw;
+  height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: all .3s ease-in-out;
+
+  background-color: #f0f0f0;
+
+}
+
+.model form input,
+.model textarea {
+  display: block;
+  width: 96%;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+.model textarea {
+  width: 96%;
+}
+
+.model form {
+ width: 90%;
+  max-width: 500px;
+  padding: 20px;
+  background-color: #33434b;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.model form label {
+  color: #fff;
+}
+

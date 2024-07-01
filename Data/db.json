@@ -1,0 +1,107 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "NEXT.JS Cours",
+      "price": "100.97",
+      "description": "Your perfect pack for everyday use and walks in the forest. ",
+      "category": "men's clothing",
+      "image": "https://res.cloudinary.com/dyxoy6dpx/image/upload/v1713339423/OIP_56ddcd95de.jpg",
+      "rating": {
+        "rate": 3.9,
+        "count": 120
+      }
+    },
+    {
+      "id": 2,
+      "title": "React.js",
+      "price": "22.98",
+      "description": "Slim-fitting style, contrast raglan long sleeve, three-button henley placket.",
+      "category": "men's clothing",
+      "image": "https://res.cloudinary.com/dyxoy6dpx/image/upload/v1713333541/medium_R_1_661b03e49b.png",
+      "rating": {
+        "rate": 4.1,
+        "count": 259
+      }
+    },
+    {
+      "id": 3,
+      "title": "Next.js",
+      "price": "80.99",
+      "description": "great outerwear jackets for Spring/Autumn/Winter.",
+      "category": "men's clothing",
+      "image": "https://res.cloudinary.com/dyxoy6dpx/image/upload/v1713241383/R_4514da55bc.png",
+      "rating": {
+        "rate": 4.7,
+        "count": 500
+      }
+    },
+    {
+      "title": "Post",
+      "image": "https://images.unsplash.com/photo-1545670723-196ed0954986?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHdlYiUyMGRldmVsb3BtZW50fGVufDB8fDB8fHww",
+      "description": "\nLorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium reprehenderit inventore itaque dolor sapiente harum. Voluptas quam possimus id reiciendis consequuntur eos blanditiis aliquid neque vel rem molestias, delectus accusamus!",
+      "price": "23.98",
+      "id": 6
+    },
+    {
+      "title": "test",
+      "image": "https://plus.unsplash.com/premium_photo-1718119453300-73be4e1b6212?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHx8",
+      "description": "loooo......",
+      "price": "22.35",
+      "id": 7
+    },
+    {
+      "title": "test",
+      "image": "https://plus.unsplash.com/premium_photo-1661765778256-169bf5e561a6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHx8",
+      "id": 9,
+      "price": "22.98",
+      "description": "helllo"
+    },
+    {
+      "title": "Lawyer Template",
+      "price": "89.99",
+      "description": "https://images.unsplash.com/photo-1719122180607-66d0c7d5c26c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90b3MtZmVlZHw0fHx8ZW58MHx8fHx8",
+      "image": "https://images.unsplash.com/photo-1719122180607-66d0c7d5c26c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90b3MtZmVlZHw0fHx8ZW58MHx8fHx8",
+      "id": 10
+    }
+  ],
+  "users": [
+    {
+      "username": "Hussein Sadiq Elged",
+      "password": "1",
+      "email": "elged194@gmail.com",
+      "image": "/sons.jpg",
+      "id": 1
+    },
+    {
+      "username": "Hussein Sadiq Elged",
+      "password": "123",
+      "email": "dev_drive@outlook.com",
+      "id": 2
+    },
+    {
+      "username": "elged194",
+      "password": "123",
+      "email": "Hu@gmail.com",
+      "id": 3
+    },
+    {
+      "username": "S7s",
+      "email": "ssss@gmail.com",
+      "password": "123",
+      "id": 4
+    },
+    {
+      "username": "sons",
+      "email": "Hu@gmail.com",
+      "password": "1",
+      "id": 9
+    },
+    {
+      "username": "Hussein Sadiq Elged",
+      "email": "elged194@gmail.com",
+      "password": "123",
+      "id": 10
+    }
+  ]
+}

@@ -1,0 +1,257 @@
+/* ------------/ header /---------- */
+.header {
+  width: 97%;
+  height: 60px;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #444;
+  border-bottom: solid 1px #555;
+  margin-bottom: 50px;
+}
+
+header input {
+  padding: 5px 10px;
+  border: solid 1px;
+}
+
+header ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 30%;
+
+}
+
+header li {
+  font-weight: bold;
+  color: #666;
+}
+
+header .bx {
+  font-size: 30px;
+  margin-right: 20px;
+  cursor: pointer;
+  position: relative;
+}
+
+.bx-cart-alt span {
+  position: absolute;
+  top: -7px;
+  left: 19px;
+  font-size: 15px;
+  background-color: #555;
+  padding: 3px 8px;
+  border-radius: 14px;
+  color: #fff;
+  font-weight: 500;
+}
+
+
+header .profile-card {
+  position: absolute;
+  right: 35px;
+  top: 62px;
+  min-width: 150px;
+  max-width: 300px;
+  z-index: 1;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.3s, opacity 0.5s;
+}
+
+header .profile-image {
+  width: 85px;
+  height: 85px;
+}
+header .profile-card h2{
+  width: max-content;
+}
+
+header .bx-user-pin:hover+.profile-card {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* ------------/ not found /---------- */
+.not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.not-found h1 {
+  font-size: 6rem;
+  margin: 0;
+  color: #ff4c4c;
+}
+
+.not-found h2 {
+  font-size: 2rem;
+  margin: 10px 0;
+  color: #333;
+}
+
+.not-found p {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #666;
+}
+
+.home-link {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #444;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.home-link:hover {
+  background-color: #333;
+}
+
+/* ------------/ footer /---------- */
+footer {
+  background-color: #444;
+  color: #fff;
+  text-align: center;
+  width: calc(100% - 30px);
+  padding: 15px;
+  margin-bottom: 2px;
+
+}
+
+/* -------------/ Snackbar Cart /--------------- */
+.snackbar-cart {
+  visibility: hidden;
+  min-width: 250px;
+  background-color: #4CAF50;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  z-index: 1;
+  font-size: 17px;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: visibility 0s linear 0.3s, opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.snackbar-cart.show {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+  transition: visibility 0s linear 0s, opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.snackbar-cart.hide {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: visibility 0s linear 0.3s, opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.snackbar-cart .bx-check-circle {
+  font-size: 25px;
+}
+
+/* ----------/ Snackbar Delete /----------*/
+.snackbar-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #3333333f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.snackbar {
+  visibility: hidden;
+  min-width: 300px;
+  /* margin-left: -150px; */
+  background-color: #444;
+  color: #fff;
+  text-align: center;
+  border-radius: 8px;
+  padding: 20px;
+  /* position: fixed; */
+  z-index: 1;
+  /* left: 50%; */
+  /* bottom: 30px; */
+  font-size: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: visibility 0.3s, opacity 0.5s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+}
+
+.snackbar.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.snackbar-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.snackbar-buttons button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.snackbar-buttons .confirm-btn {
+  background-color: #28a745;
+}
+
+.snackbar-buttons .cancel-btn {
+  background-color: #dc3545;
+}
+
+.snackbar-buttons button:hover {
+  opacity: 0.9;
+}
+
+.snackbar .product-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.snackbar .delete-btn {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.snackbar .delete-btn:hover {
+  background-color: #c82333;
+}
