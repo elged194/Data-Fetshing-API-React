@@ -51,6 +51,7 @@ const Home = () => {
 
   // productsLoading
   if (productsLoading) {
+    // return <div className="loading-message">Loading...</div>;
     return <Loading/>
   }
 

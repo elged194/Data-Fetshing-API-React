@@ -135,6 +135,7 @@ const Provider = ({ children }) => {
   // ---------------------- / Show Cart /----------------------------
   const [cart, setCart] = useState([]);
   let quantityCart = cart.length;
+  const [totalPrice, setTotalPrice] = useState(0);
 
   const addCart = (id) => {
     const product = products.find((product) => product.id === id);
@@ -204,6 +205,8 @@ const Provider = ({ children }) => {
         cart,
         addCart,
         quantityCart,
+        totalPrice,
+        setTotalPrice,
 
         // total,
         deletItemCart,

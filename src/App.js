@@ -10,6 +10,7 @@ import Login from "./pages/sginUp/Login";
 import { Provider } from "./pages/ApiContext";
 import Cart from "./pages/Cart/Cart";
 import MyProfile from "./pages/MyProfile/MyProfile";
+import Checkout from "./pages/Checkout/Checkout";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
             <Route path="/MyProfile" element={<MyProfile />} />
+            <Route path="/checkout" element={<Checkout />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Provider>

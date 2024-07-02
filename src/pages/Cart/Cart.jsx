@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./Cart.css"; // استيراد ملف الـ CSS لتنسيق الصفحة
 import { DashboardContext } from "../ApiContext";
 import Header from "../../components/header";
@@ -14,10 +14,16 @@ const Cart = () => {
     showSnackbarDelete,
     setShowSnackbarDelete,
     isLoggedIn,
+    totalPrice,
+    setTotalPrice,
   } = useContext(DashboardContext);
   const navigate = useNavigate();
   const [deleteItemId, setDeleteItemId] = useState(null); // لإدارة معرف العنصر المراد حذفه
   let total = 0;
+
+  useEffect(() => {
+    setTotalPrice(total);
+  }, [setTotalPrice, total, totalPrice, deletItemCart]);
 
   // Render NotLogin component if user is not logged in
   if (!isLoggedIn) {
@@ -75,8 +81,13 @@ const Cart = () => {
         <div className="cart-summary">
           <h3>Cart Summary</h3>
           <p>Total Items: {quantityCart}</p>
-          <p>Total Price: ${total.toFixed(2)}</p>
-          <button className="btn-checkout">Proceed to Checkout</button>
+          <p>Total Price: ${totalPrice.toFixed(2)}</p>
+          <button
+            className="btn-checkout"
+            onClick={() => navigate("/checkout")}
+          >
+            Proceed to Checkout
+          </button>
         </div>
       </div>
     </main>

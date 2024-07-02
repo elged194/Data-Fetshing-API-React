@@ -63,6 +63,13 @@
       "description": "https://images.unsplash.com/photo-1719122180607-66d0c7d5c26c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90b3MtZmVlZHw0fHx8ZW58MHx8fHx8",
       "image": "https://images.unsplash.com/photo-1719122180607-66d0c7d5c26c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90b3MtZmVlZHw0fHx8ZW58MHx8fHx8",
       "id": 10
+    },
+    {
+      "title": "Electronic Bank Representative",
+      "price": "23",
+      "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium reprehenderit inventore itaque dolor sapiente harum. Voluptas quam possimus id reiciendis consequuntur eos blanditiis aliquid neque vel rem molestias, delectus accusamus!",
+      "image": "https://res.cloudinary.com/dyxoy6dpx/image/upload/v1713333541/medium_R_1_661b03e49b.png",
+      "id": 11
     }
   ],
   "users": [
