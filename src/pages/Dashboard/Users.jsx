@@ -71,22 +71,41 @@ const Users = () => {
       <button onClick={handleAddOrUpdateUser}>
         {isEditingUser ? "Update User" : "Add User"}
       </button>
-      <ul>
-        {users.map((user) => (
-          <li key={user.id}>
-            {user.id} : {user.username}
-            <div style={{ display: "flex" }}>
-              <button
-                onClick={() => handleEdit(user)}
-                style={{ backgroundColor: "#444" }}
-              >
-                Edit
-              </button>
-              <button onClick={() => deleteUser(user.id)}>Delete</button>
-            </div>
-          </li>
-        ))}
-      </ul>
+      <table>
+        <tbody>
+          <tr>
+            <th>ID</th>
+            <th>Gmail</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+
+          {users.map((user) => (
+            <tr key={user.id}>
+              <td>{user.id}</td>
+              <td>{user.email}</td>
+              <td>
+                {/* <div style={{ display: "flex" }}> */}
+                <button
+                  onClick={() => handleEdit(user)}
+                  style={{ backgroundColor: "#444" }}
+                >
+                  Edit
+                </button>
+              </td>
+              <td>
+                {" "}
+                <button
+                  onClick={() => deleteUser(user.id)}
+                  style={{ backgroundColor: "#c82333" }}
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };

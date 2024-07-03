@@ -1,17 +1,24 @@
+import { useEffect } from "react";
 import { useNavigate } from "react-router";
 
-const PaymentRight = ({ setShowSnackbar }) => {
+const PaymentRight = ({ setShowSnackbar, showSnackbar }) => {
   const navigate = useNavigate();
 
-  const handelShowSnackbar = () => {
+  const handleShowSnackbar = () => {
     setShowSnackbar(true);
-    setTimeout(() => {
-      setShowSnackbar(false);
-      setTimeout(() => {
-        navigate("/");
-      }, 0); 
-    }, 3000);
   };
+
+  
+  useEffect(() => {
+    let timer;
+    if (showSnackbar) {
+      timer = setTimeout(() => {
+        setShowSnackbar(false);
+        navigate("/");
+      }, 3000); // ظهور الـ Snackbar لمدة 3 ثوانٍ
+    }
+    return () => clearTimeout(timer);
+  }, [showSnackbar, navigate, setShowSnackbar]);
 
   return (
     <>
@@ -102,7 +109,7 @@ const PaymentRight = ({ setShowSnackbar }) => {
           <button
             type="submit"
             className="payment-form-submit-button"
-            onClick={handelShowSnackbar}
+            onClick={handleShowSnackbar}
           >
             <i className="ri-wallet-line" /> Pay
           </button>

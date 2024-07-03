@@ -14,15 +14,19 @@ const Checkout = () => {
         <div className="container">
           <div className="payment-wrapper">
             <PaymentLeft />
-            <PaymentRight setShowSnackbar={setShowSnackbar} />
+            <PaymentRight
+              setShowSnackbar={setShowSnackbar}
+              showSnackbar={showSnackbar}
+            />
 
-            <div className={`SnackbarCheck ${showSnackbar ? "show" : ""}`}>
-              <div className="SnackbarCheck__content show">
-                Purchase completed successfully{" "}
-                <i class="bx bx-message-alt-check"></i>
+            {showSnackbar && (
+              <div className={`SnackbarCheck show`}>
+                <div className="SnackbarCheck__content">
+                  Purchase completed successfully{" "}
+                  <i class="bx bx-message-alt-check"></i>
+                </div>
               </div>
-            </div>
-            
+            )}
           </div>
         </div>
       </section>

@@ -66,7 +66,6 @@ const Products = () => {
 
   return (
     <div>
-
       {/* Show Snackbar Delete*/}
       {showSnackbarDelete && (
         <SnackbarDelete
@@ -109,29 +108,39 @@ const Products = () => {
         {isEditing ? "Update Product" : "Add Product"}
       </button>
 
-      <ul>
-        {products.map((product) => (
-          <li key={product.id}>
-            {product.title} - ${product.price}
-            <div style={{ display: "flex" }}>
-              <button
-                onClick={() => handleEdit(product)}
-                style={{ backgroundColor: "#444" }}
-              >
-                Edit
-              </button>
-              <button
-                onClick={() => {
-                  setDeleteItemId(product.id); // تعيين معرف العنصر المراد حذفه
-                  setShowSnackbarDelete(true); // Show Snackbar Delete
-                }}
-              >
-                Delete
-              </button>
-            </div>
-          </li>
-        ))}
-      </ul>
+      <table>
+        <tbody>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+
+          {products.map((product) => (
+            <tr key={product.id}>
+              <td>{product.id}</td>
+              <td>{product.title} </td>
+              <td>${product.price}</td>
+              <td>
+                <button onClick={() => handleEdit(product)}>Edit</button>
+              </td>
+              <td>
+                <button
+                  onClick={() => {
+                    setDeleteItemId(product.id); // تعيين معرف العنصر المراد حذفه
+                    setShowSnackbarDelete(true); // Show Snackbar Delete
+                  }}
+                  style={{ backgroundColor: "#c82333" }}
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };
