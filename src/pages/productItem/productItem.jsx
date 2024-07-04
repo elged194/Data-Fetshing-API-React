@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
 import UseFetsh from "../../useFetsh";
 import { useNavigate, useParams } from "react-router";
-import Header from "../../components/header";
-import Footer from "../../components/footer";
 import { DashboardContext } from "../ApiContext";
 import "./productItem.css";
 import NotLogin from "../not login/notLogin";
-import SnackbarCart from "../../components/SnackbarCart";
-import SnackbarDelete from "../../components/SnackbarDelete";
+import SnackbarCart from "../../components/Snackbar/SnackbarCart";
+import SnackbarDelete from "../../components/Snackbar/SnackbarDelete";
+import Header from "../../components/Header/header";
+import Footer from "../../components/Footer/footer";
 
 const ProductItem = () => {
   const {
@@ -17,6 +17,9 @@ const ProductItem = () => {
     showSnackbarCart,
     showSnackbarDelete,
     setShowSnackbarDelete,
+    // favProduct,
+    // deletItemFavorit,
+    // addMyFavorite,
   } = useContext(DashboardContext); // context Api
   let { id } = useParams(); // get id from Params
   const navigate = useNavigate(); // Navigate
@@ -59,7 +62,10 @@ const ProductItem = () => {
 
         {/* Show Snackbar Delete*/}
         {showSnackbarDelete && (
-          <SnackbarDelete handelDelete={() => handelDelete(data.id)} deletItemCart={null} />
+          <SnackbarDelete
+            handelDelete={() => handelDelete(data.id)}
+            deletItemCart={null}
+          />
         )}
 
         <section>
@@ -71,12 +77,20 @@ const ProductItem = () => {
             <div className="productItemDetel">
               <div>
                 <h3>{data.title}</h3>
-                <h5> price: ${data.price}</h5>
+                <h5> ${data.price}</h5>
+
+                <div className="ratings">
+                  <i class="bx bxs-star"></i>
+                  <i class="bx bxs-star"></i>
+                  <i class="bx bxs-star"></i>
+                  <i class="bx bxs-star"></i>
+                  <i class="bx bxs-star-half"></i>
+                </div>
                 <p>Course • Mindful Mike</p>
                 <p>{data.description}</p>
               </div>
 
-              <div>
+              <div className="actions">
                 <button
                   onClick={() => {
                     setShowSnackbarDelete(true); // Show Snackbar Delete
@@ -84,11 +98,24 @@ const ProductItem = () => {
                 >
                   Delete
                 </button>
+
+                {/* {favProduct.some((favItem) => favItem.id === data.id) ? (
+                  <i
+                    class="bx bxs-heart-circle"
+                    onClick={() => deletItemFavorit(data.id)}
+                  ></i>
+                ) : (
+                  <i
+                    class="bx bx-heart-circle"
+                    onClick={() => addMyFavorite(data.id)}
+                  ></i>
+                )} */}
+
                 <button
                   onClick={() => {
                     handleAddToCart(data.id); // Add Item In Cart
                   }}
-                  style={{ marginLeft: "10px", backgroundColor: "#444" }}
+                  className="add-to-cart"
                 >
                   <i className="bx bx-cart-alt"></i> Add To Cart
                 </button>

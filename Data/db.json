@@ -79,7 +79,6 @@
       "id": 12
     }
   ],
-  
   "users": [
     {
       "username": "Hussein Sadiq Elged",
@@ -105,24 +104,6 @@
       "email": "ssss@gmail.com",
       "password": "123",
       "id": 4
-    },
-    {
-      "username": "sons",
-      "email": "Hu@gmail.com",
-      "password": "1",
-      "id": 9
-    },
-    {
-      "username": "Hussein Sadiq Elged",
-      "email": "elged194@gmail.com",
-      "password": "123",
-      "id": 10
-    },
-    {
-      "username": "husseinElged",
-      "email": "dev_drive@outlook.com",
-      "password": "1",
-      "id": 11
     }
   ]
 }

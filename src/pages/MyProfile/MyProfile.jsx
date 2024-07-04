@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
-import Header from "../../components/header";
+import Header from "../../components/Header/header";
 import './MyProfile.css'
 import { DashboardContext } from "../ApiContext";
 import NotLogin from "../not login/notLogin";

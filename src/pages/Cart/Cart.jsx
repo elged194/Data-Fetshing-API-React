@@ -1,10 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
 import "./Cart.css"; // استيراد ملف الـ CSS لتنسيق الصفحة
 import { DashboardContext } from "../ApiContext";
-import Header from "../../components/header";
+import Header from "../../components/Header/header";
 import { useNavigate } from "react-router";
-import SnackbarDelete from "../../components/SnackbarDelete";
+
 import NotLogin from "../not login/notLogin";
+import SnackbarDelete from "../../components/Snackbar/SnackbarDelete";
 
 const Cart = () => {
   const {

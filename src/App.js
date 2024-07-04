@@ -1,6 +1,4 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import NotFound from "./components/notFound";
-// import Update from "./pages/Update/Update";
 import Register from "./pages/sginUp/Register";
 import ProductItem from "./pages/productItem/productItem";
 import Dashboard from "./pages/Dashboard/Dashboard";
@@ -11,6 +9,9 @@ import { Provider } from "./pages/ApiContext";
 import Cart from "./pages/Cart/Cart";
 import MyProfile from "./pages/MyProfile/MyProfile";
 import Checkout from "./pages/Checkout/Checkout";
+import FavoriteProducts from "./pages/FavoriteProducts/FavoriteProducts";
+import NotFound from "./components/NotFound/NotFound";
+
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/MyProfile" element={<MyProfile />} />
             <Route path="/checkout" element={<Checkout />} />
+            <Route path="/favoriteProducts" element={<FavoriteProducts />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Provider>

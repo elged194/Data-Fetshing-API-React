@@ -60,5 +60,15 @@ button {
   border: 1px solid #ddd;
   border-radius: 4px;
 }
-
 /* end: Globals */
+
+/* ------------/ footer /---------- */
+footer {
+  background-color: #444;
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 2px;
+
+}

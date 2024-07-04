@@ -48,3 +48,14 @@
   font-size: 20px;
   color: #777;
 }
+
+@media (max-width: 480px) {
+header .profile-card{
+  right: 16px;
+  top: 109px;
+}
+.profile-card{
+
+  width: 85vw;
+}
+}

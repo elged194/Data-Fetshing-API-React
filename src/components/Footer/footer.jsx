@@ -1,5 +1,4 @@
 import React from 'react';
-import './Comp.css'
 
 const Footer = () => {
     return (

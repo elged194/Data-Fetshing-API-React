@@ -46,15 +46,28 @@ const Provider = ({ children }) => {
 
   // ---------------------- / Add User && Product /----------------------------
   // ---- / Add User /-----
+
   const addUser = async () => {
-    const response = await fetch("http://localhost:4000/users", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(newUser),
-    });
-    const data = await response.json();
-    setUsers([...users, data]);
-    setNewUser({ username: "", email: "", password: "" });
+    const usersResponse = await fetch("http://localhost:4000/users");
+    const usersData = await usersResponse.json();
+
+    // تحقق مما إذا كان البريد الإلكتروني موجودًا
+    const emailExists = usersData.some((user) => user.email === newUser.email);
+
+    // Email Exists
+    if (emailExists) {
+      alert("The email already exists go and log in");
+    } else {
+      const response = await fetch("http://localhost:4000/users", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(newUser),
+      });
+
+      const data = await response.json();
+      setUsers([...users, data]);
+      setNewUser({ username: "", email: "", password: "" });
+    }
   };
 
   // ---- / Add Product /-----
@@ -132,7 +145,7 @@ const Provider = ({ children }) => {
     localStorage.removeItem("loggedInUser"); // إزالة بيانات المستخدم من localStorage
   };
 
-  // ---------------------- / Show Cart /----------------------------
+  // ---------------------- / Add To Cart /----------------------------
   const [cart, setCart] = useState([]);
   let quantityCart = cart.length;
   const [totalPrice, setTotalPrice] = useState(0);
@@ -147,6 +160,7 @@ const Provider = ({ children }) => {
     }
   };
 
+  // Delet Item To Cart
   const deletItemCart = (id) => {
     const product = cart.filter((product) => product.id !== id);
     setCart(product);
@@ -163,6 +177,41 @@ const Provider = ({ children }) => {
     setTimeout(() => {
       setShowSnackbarCart(false);
     }, 2500); // Hide the snackbar after 3 seconds
+  };
+
+  // ---------------------- / My Favorite Products /----------------------------
+  const [favProduct, setFavProduct] = useState(() => {
+    // استرداد المنتجات المفضلة من التخزين المحلي عند التحميل
+    const savedFavorites = localStorage.getItem("favoriteProducts");
+
+    return savedFavorites ? JSON.parse(savedFavorites) : [];
+  });
+
+  const addMyFavorite = (id) => {
+    const productFav = products.find((item) => item.id === id);
+
+    const isProductInFav = favProduct.some((favItem) => favItem.id === id);
+
+    if (!isProductInFav) {
+      setFavProduct([...favProduct, productFav]);
+      
+      localStorage.setItem(
+        "favoriteProducts",
+        JSON.stringify([...favProduct, productFav])
+      );
+    }
+  };
+
+  // Delet Item To Favorit
+  const deletItemFavorit = (id) => {
+    const updatedFavProducts = favProduct.filter((item) => item.id !== id);
+
+    setFavProduct(updatedFavProducts);
+
+    localStorage.setItem(
+      "favoriteProducts",
+      JSON.stringify(updatedFavProducts)
+    );
   };
 
   // ---------------------- / Show snackbar Delete /----------------------------
@@ -218,6 +267,11 @@ const Provider = ({ children }) => {
         // show Snackbar Delete
         showSnackbarDelete,
         setShowSnackbarDelete,
+
+        // Favorite Products
+        addMyFavorite,
+        favProduct,
+        deletItemFavorit,
       }}
     >
       {children}

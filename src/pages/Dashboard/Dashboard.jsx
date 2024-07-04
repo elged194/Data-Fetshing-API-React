@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import "./Dashboard.css";
-import Header from "../../components/header";
+import Header from "../../components/Header/header";
 import { DashboardContext } from "../ApiContext";
 import Users from "./Users";
 import Products from "./Products";

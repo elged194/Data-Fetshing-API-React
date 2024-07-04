@@ -1,11 +1,11 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router";
-import Header from "../../components/header";
+import Header from "../../components/Header/header";
 import "./style.css";
 import { DashboardContext } from "../ApiContext";
 
 const Register = () => {
-  const { newUser, setNewUser, addUser, usersErrMsg } =
+  const { newUser, setNewUser, addUser, usersErrMsg ,  } =
     useContext(DashboardContext);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -23,12 +23,12 @@ const Register = () => {
         navigate("/login");
       }, 2000);
     } else {
-      usersErrMsg();
+      return usersErrMsg
     }
   };
 
   return (
-    <>
+    <main>
       <Header />
       <div className="register">
         <h2>Register</h2> <br />
@@ -66,7 +66,7 @@ const Register = () => {
           <button type="submit">{isLoading ? "Loading..." : "SginUp"}</button>
         </form>
       </div>
-    </>
+    </main>
   );
 };
 

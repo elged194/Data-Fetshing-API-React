@@ -1,59 +1,60 @@
+/* productItem.css */
 .productItem {
     padding: 20px;
-}
-
-.productItem section {
-    height: 67.5vh;
-}
-
-.productItem article {
+  }
+  
+  .productItem section {
+    min-height: 67.5vh;
+  }
+  
+  .productItem article {
     display: flex;
-    justify-content: center;
     align-items: center;
     margin-top: 20px;
-}
-
-.productItem figure {
-    width: 50%;
+  }
+  
+  .productItem figure {
+    width: 100%;
     text-align: center;
-}
-
-.productItem img {
-    width: auto;
-    max-height: 320px;
+  }
+  
+  .productItem img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
     object-fit: cover;
-    border-radius: 8px 8px 0 0;
-}
-
-.productItem .productItemDetel {
+    border-radius: 8px;
+  }
+  
+  .productItem .productItemDetel {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     padding: 20px;
     background-color: #f8f9fa;
-    /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); */
     border-radius: 8px;
-    margin-left: 20px;
-    width: 50%;
-}
-
-.productItem h3 {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
+  }
+  
+  .productItem h3 {
     margin-top: 0;
     font-size: 24px;
-}
-
-.productItem h5 {
+  }
+  
+  .productItem h5 {
     font-size: 20px;
     color: #007bff;
     margin-bottom: 10px;
-}
-
-.productItem p {
+  }
+  
+  .productItem p {
     margin-bottom: 10px;
     line-height: 1.6;
-}
-
-.productItem button {
+  }
+  
+  .productItem button {
     padding: 10px 20px;
     background-color: #dc3545;
     color: white;
@@ -61,25 +62,69 @@
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s;
-}
-
-.productItem button:hover {
+  }
+  
+  .productItem button:hover {
     background-color: #c82333;
-}
-
-@media (max-width: 768px) {
+  }
+  
+  .productItem .ratings .bx {
+    font-size: 20px;
+    color: goldenrod;
+  }
+  
+  .productItem .actions {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+  }
+  .productItem .actions button{
+    margin-right: 5px;
+  }
+  
+  .add-to-cart {
+    background-color: #444;
+  }
+  
+  @media (max-width: 768px) {
+    .productItem figure {
+      width: 100%;
+    }
+  
+    .productItem .productItemDetel {
+      width: 100%;
+      margin-left: 0;
+      margin-top: 20px;
+    }
     .productItem article {
         flex-direction: column;
     }
-
-    .productItem .productItemDetel {
-        width: 100%;
-        margin-left: 0;
-        margin-top: 20px;
+  }
+  
+  @media (max-width: 480px) {
+    .productItem {
+      padding: 10px;
     }
-}
-
-
-/* ---------------------------- */
-/* Snackbar.css */
-
+  
+    .productItem .productItemDetel {
+      padding: 10px;
+    }
+  
+    .productItem h3 {
+      font-size: 20px;
+    }
+  
+    .productItem h5 {
+      font-size: 18px;
+    }
+  
+    .productItem button {
+      padding: 8px 16px;
+    }
+  
+    .actions .bx{
+      font-size: 15px;
+    }
+  
+  }

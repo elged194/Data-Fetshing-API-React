@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { DashboardContext } from "../ApiContext";
-import SnackbarDelete from "../../components/SnackbarDelete";
+import SnackbarDelete from "../../components/Snackbar/SnackbarDelete";
 
 const Products = () => {
   const {
@@ -108,7 +108,7 @@ const Products = () => {
         {isEditing ? "Update Product" : "Add Product"}
       </button>
 
-      <table>
+      <table className="responsive-table">
         <tbody>
           <tr>
             <th>ID</th>

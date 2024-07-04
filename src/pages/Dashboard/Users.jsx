@@ -71,7 +71,8 @@ const Users = () => {
       <button onClick={handleAddOrUpdateUser}>
         {isEditingUser ? "Update User" : "Add User"}
       </button>
-      <table>
+
+      <table className="responsive-table">
         <tbody>
           <tr>
             <th>ID</th>

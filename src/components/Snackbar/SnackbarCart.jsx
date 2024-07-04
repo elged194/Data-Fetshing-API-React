@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import "./Comp.css";
-import { DashboardContext } from "../pages/ApiContext";
+import './Snackbar.css'
+import { DashboardContext } from "../../pages/ApiContext";
 
 const SnackbarCart = () => {
   const { showSnackbarCart } = useContext(DashboardContext); // context Api

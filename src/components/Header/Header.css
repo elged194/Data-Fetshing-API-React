@@ -1,0 +1,139 @@
+/* ------------/ header.css /---------- */
+.header {
+    width: 100%;
+    min-height: 60px;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #444;
+    border-bottom: solid 1px #555;
+    margin-bottom: 50px;
+}
+
+header h1 {
+    font-size: 1.5em;
+}
+
+header ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header li {
+    font-weight: bold;
+    color: #666;
+    margin: 0 10px;
+}
+
+.header-icons {
+    display: flex;
+    align-items: center;
+}
+
+header .bx {
+    font-size: 30px;
+    margin-right: 20px;
+    cursor: pointer;
+    position: relative;
+}
+
+.bx-cart-alt span {
+    position: absolute;
+    top: -7px;
+    left: 19px;
+    font-size: 15px;
+    background-color: #555;
+    padding: 3px 8px;
+    border-radius: 14px;
+    color: #fff;
+    font-weight: 500;
+}
+
+header .profile-card {
+    position: absolute;
+    right: 35px;
+    top: 62px;
+    min-width: 150px;
+    max-width: 300px;
+    z-index: 1;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.3s, opacity 0.5s;
+}
+
+header .profile-image {
+    width: 85px;
+    height: 85px;
+}
+
+header .profile-card h2 {
+    width: max-content;
+}
+
+header .bx-user-pin:hover+.profile-card {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .header {
+        padding: 10px 15px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        justify-content: center;
+        
+        padding: 5px 0;
+        width: 100%;
+    }
+
+    .header-icons {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .bx {
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    main{
+        width: calc(100vw - 20px) !important;
+        margin: 0 10px !important;
+    }
+    .header {
+        height: auto;
+    }
+
+    header h1 {
+        font-size: 1.2em;
+    }
+
+    header ul {
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    .header-icons {
+        flex-wrap: nowrap;
+    }
+
+    .bx {
+        font-size: 25px;
+    }
+
+    .bx-cart-alt span {
+        top: -5px;
+        left: 15px;
+        font-size: 12px;
+    }
+}

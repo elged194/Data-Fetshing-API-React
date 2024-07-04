@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
-import { DashboardContext } from "../pages/ApiContext";
+import { DashboardContext } from "../../pages/ApiContext";
+import "./Snackbar.css";
 
 const SnackbarDelete = ({ handelDelete, deletItemCart }) => {
   const { setShowSnackbarDelete } = useContext(DashboardContext); // context Api

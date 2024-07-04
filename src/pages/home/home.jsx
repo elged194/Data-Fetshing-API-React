@@ -1,13 +1,13 @@
 import { useContext, useState, useEffect, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
-import Header from "../../components/header";
+import Header from "../../components/Header/header";
+import Footer from "../../components/Footer/footer";
 import PriceFilter from "./PriceFilter";
-import Footer from "../../components/footer";
 import "./home.css";
 import { DashboardContext } from "../ApiContext";
 import NotLogin from "../not login/notLogin";
-import SnackbarCart from "../../components/SnackbarCart";
 import Loading from "../../components/Loading/Loading";
+import SnackbarCart from "../../components/Snackbar/SnackbarCart";
 
 const Home = () => {
   const {
@@ -17,6 +17,9 @@ const Home = () => {
     isLoggedIn,
     handleAddToCart,
     showSnackbarCart,
+    addMyFavorite,
+    favProduct,
+    deletItemFavorit,
   } = useContext(DashboardContext);
   const navigate = useNavigate();
   const [search, setSearch] = useState("");
@@ -52,7 +55,7 @@ const Home = () => {
   // productsLoading
   if (productsLoading) {
     // return <div className="loading-message">Loading...</div>;
-    return <Loading/>
+    return <Loading />;
   }
 
   // Render NotLogin component if user is not logged in
@@ -86,25 +89,42 @@ const Home = () => {
 
       <section className="products-list">
         {filteredProducts.map((product) => (
-          <article key={product.id} className="product-item">
-            <figure onClick={() => navigate(`/productItem/${product.id}`)}>
-              <img src={product.image} alt={product.title} />
-            </figure>
+          <>
+            <article key={product.id} className="product-item">
+              <figure onClick={() => navigate(`/productItem/${product.id}`)}>
+                <img src={product.image} alt={product.title} />
+              </figure>
 
-            <div className="product-details">
-              <div>
-                <h3>{product.title}</h3>
-                <p>Course • Mindful Mike</p>
-              </div>
+              <div className="product-details">
+                <div>
+                  <h3>{product.title}</h3>
+                  <p>Course • Mindful Mike</p>
+                </div>
 
-              <div>
-                <h5>${product.price}</h5>
-                <button onClick={() => handleAddToCart(product.id)}>
-                  <i className="bx bx-cart-alt"></i> Add To Cart
-                </button>
+                <div>
+                  <h5>${product.price}</h5>
+
+                  <div>
+                    {favProduct.some((favItem) => favItem.id === product.id) ? (
+                      <i
+                        class="bx bxs-heart-circle"
+                        onClick={() => deletItemFavorit(product.id)}
+                      ></i>
+                    ) : (
+                      <i
+                        class="bx bx-heart-circle"
+                        onClick={() => addMyFavorite(product.id)}
+                      ></i>
+                    )}
+
+                    <button onClick={() => handleAddToCart(product.id)}>
+                      <i className="bx bx-cart-alt"></i> Add To Cart
+                    </button>
+                  </div>
+                </div>
               </div>
-            </div>
-          </article>
+            </article>
+          </>
         ))}
       </section>
       <Footer />

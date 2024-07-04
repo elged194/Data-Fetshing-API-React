@@ -1,10 +1,12 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router";
-import Header from "../../components/header";
-import Footer from "../../components/footer";
+
 import "./addProduct.css";
 import { DashboardContext } from "../ApiContext";
 import NotLogin from "../not login/notLogin";
+import Header from "../../components/Header/header";
+import Footer from "../../components/Footer/footer";
+
 
 const AddProduct = () => {
   const { newProduct, setNewProduct, addProduct, isLoggedIn } =
@@ -75,8 +77,8 @@ const AddProduct = () => {
         <Footer />
       </>
     );
-  }else{
-    return <NotLogin/>
+  } else {
+    return <NotLogin />;
   }
 };
 

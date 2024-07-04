@@ -1,4 +1,4 @@
-.register ,.login{
+.register, .login {
     width: 95%;
     height: 100vh;
     display: flex;
@@ -7,21 +7,52 @@
     padding: 0 20px;
 }
 
-.login{
+.login {
     justify-content: center;
 }
-.login form , .register form{
+
+.login form, .register form {
     display: flex;
     flex-direction: column;
     width: 30vw;
 }
 
 .login input, .register input,
-.login button , .register button{
-  display: block;
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+.login button, .register button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+@media (max-width: 1024px) {
+    .login form, .register form {
+        width: 40vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .login form, .register form {
+        width: 60vw;
+    }
+
+    .login input, .register input,
+    .login button, .register button {
+        padding: 8px;
+        margin-bottom: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .login form, .register form {
+        width: 80vw;
+    }
+
+    .login input, .register input,
+    .login button, .register button {
+        padding: 6px;
+        margin-bottom: 6px;
+    }
 }
